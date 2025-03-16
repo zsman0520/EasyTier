@@ -57,7 +57,10 @@ jobs:
             OS: windows-latest
             GUI_TARGET: x86_64-pc-windows-msvc
             ARTIFACT_NAME: windows-x86_64
-
+          - TARGET: i686-pc-windows-msvc
+            OS: windows-latest
+            GUI_TARGET: i686-pc-windows-msvc
+            ARTIFACT_NAME: windows-x86
           - TARGET: aarch64-pc-windows-msvc
             OS: windows-latest
             GUI_TARGET: aarch64-pc-windows-msvc

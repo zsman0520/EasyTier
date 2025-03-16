@@ -73,6 +73,8 @@ impl WindowsBuild {
             println!("cargo:rustc-link-search=native=easytier/third_party/");
         } else if target.contains("aarch64") {
             println!("cargo:rustc-link-search=native=easytier/third_party/arm64/");
+        } else if target.contains("i686") {
+            println!("cargo:rustc-link-search=native=easytier/third_party/x86/");
         }
 
         let protoc_path = if let Some(o) = Self::check_protoc_exist() {
