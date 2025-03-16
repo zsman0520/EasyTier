@@ -75,7 +75,7 @@ jobs:
           - TARGET: i686-pc-windows-msvc
             OS: windows-latest
             ARTIFACT_NAME: windows-x86
-            
+
           - TARGET: aarch64-pc-windows-msvc
             OS: windows-latest
             ARTIFACT_NAME: windows-arm64
@@ -184,6 +184,10 @@ jobs:
               SUFFIX=.exe
               cp easytier/third_party/arm64/Packet.dll ./artifacts/objects/
               cp easytier/third_party/arm64/wintun.dll ./artifacts/objects/
+          elif [[ $OS =~ ^windows.*$ && $TARGET =~ ^i686.*$ ]]; then
+              SUFFIX=.exe
+              cp easytier/third_party/i686/Packet.dll ./artifacts/objects/
+              cp easytier/third_party/i686/wintun.dll ./artifacts/objects/
           fi
           if [[ $GITHUB_REF_TYPE =~ ^tag$ ]]; then
             TAG=$GITHUB_REF_NAME
